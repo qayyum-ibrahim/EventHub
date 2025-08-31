@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import EventDetails from "@/pages/EventDetails";
 import Events from "@/pages/Events";
 import LandingPage from "../pages/LandingPage";
+import Dashboard from "../pages/Dashboard";
 import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
@@ -11,6 +12,7 @@ const AppRoutes = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/events" element={<Events />} />
         <Route path="/events/:eventId" element={<EventDetails />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
