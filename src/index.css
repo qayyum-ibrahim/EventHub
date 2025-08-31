@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(225 7% 11%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(225 7% 11%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(225 7% 11%);
+  --color-primary: hsl(267 84% 51%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-primary-light: hsl(268 100% 95%);
+  --color-primary-glow: hsl(268 84% 75%);
+  --color-secondary: hsl(270 3% 95%);
+  --color-secondary-foreground: hsl(225 7% 20%);
+  --color-muted: hsl(270 3% 96%);
+  --color-muted-foreground: hsl(225 5% 45%);
+  --color-accent: hsl(268 100% 95%);
+  --color-accent-foreground: hsl(267 84% 51%);
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-success: hsl(142 71% 45%);
+  --color-success-foreground: hsl(0 0% 100%);
+  --color-warning: hsl(38 92% 50%);
+  --color-warning-foreground: hsl(0 0% 100%);
+  --color-border: hsl(270 6% 90%);
+  --color-input: hsl(270 6% 94%);
+  --color-ring: hsl(267 84% 51%);
+  --color-sidebar-background: hsl(0 0% 98%);
+  --color-sidebar-foreground: hsl(240 5.3% 26.1%);
+  --color-sidebar-primary: hsl(240 5.9% 10%);
+  --color-sidebar-primary-foreground: hsl(0 0% 98%);
+  --color-sidebar-accent: hsl(240 4.8% 95.9%);
+  --color-sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --color-sidebar-border: hsl(220 13% 91%);
+  --color-sidebar-ring: hsl(217.2 91.2% 59.8%);
+  --radius: 0.75rem;
+  /* --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-glow)
+  ); */
+  --gradient-hero: linear-gradient(135deg, hsl(267 84% 51%), hsl(300 84% 65%));
+  --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(270 20% 98%));
+  --shadow-soft: 0 4px 20px -4px hsl(267 84% 51% / 0.1);
+  --shadow-purple: 0 10px 40px -10px hsl(267 84% 51% / 0.3);
+  --shadow-card: 0 2px 12px -4px hsl(225 7% 11% / 0.08);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --font-inter: "Inter", "sans-serif";
+}
+
+.bg-gradient-primary {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-glow)
+  );
+}
+
+.dark {
+  --color-background: hsl(245 16% 10%); /* Deep purple-black */
+  --color-foreground: hsl(0 0% 98%); /* Bright white for contrast */
+  --color-card: hsl(248 18% 12%);
+  --color-card-foreground: hsl(0 0% 98%);
+
+  --color-popover: hsl(250 12% 12%);
+  --color-popover-foreground: hsl(0 0% 98%);
+
+  --color-primary: hsl(267 84% 70%); /* Brighter purple */
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-primary-light: hsl(268 100% 92%);
+  --color-primary-glow: hsl(267 84% 78%);
+
+  --color-secondary: hsl(252 10% 20%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+
+  --color-muted: hsl(255 6% 25%);
+  --color-muted-foreground: hsl(240 5% 70%);
+
+  --color-accent: hsl(267 60% 20%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  --color-destructive: hsl(0 70% 40%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  --color-success: hsl(142 60% 35%);
+  --color-success-foreground: hsl(0 0% 100%);
+
+  --color-warning: hsl(40 100% 40%);
+  --color-warning-foreground: hsl(0 0% 100%);
+
+  --color-border: hsl(250 6% 25%);
+  --color-input: hsl(252 6% 20%);
+  --color-ring: hsl(267 84% 60%);
+
+  --color-sidebar-background: hsl(248 18% 10%);
+  --color-sidebar-foreground: hsl(0 0% 98%);
+  --color-sidebar-primary: hsl(267 84% 50%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(250 12% 18%);
+  --color-sidebar-accent-foreground: hsl(0 0% 98%);
+  --color-sidebar-border: hsl(250 6% 25%);
+  --color-sidebar-ring: hsl(267 84% 60%);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(267 84% 65%),
+    hsl(275 84% 55%)
+  );
+
+  --gradient-hero: linear-gradient(135deg, hsl(267 84% 50%), hsl(300 84% 60%));
+
+  --gradient-card: linear-gradient(145deg, hsl(248 18% 12%), hsl(245 16% 10%));
+
+  --shadow-soft: 0 4px 20px -4px hsl(267 84% 60% / 0.15);
+  --shadow-purple: 0 10px 40px -10px hsl(267 84% 65% / 0.3);
+  --shadow-card: 0 2px 12px -4px hsl(0 0% 100% / 0.05);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "cv11", "ss01";
+    font-variant-numeric: "tabular-nums";
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-white font-semibold px-8 py-4 rounded-xl shadow-purple hover:shadow-2xl hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-ghost-purple {
+    @apply border border-primary/20 text-primary bg-primary-light/50 hover:bg-primary-light hover:scale-105 transition-all duration-300;
+  }
+
+  .card-elegant {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-purple transition-all duration-300 border border-border/50;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-white to-purple-50/30 rounded-2xl shadow-card hover:shadow-purple transition-all duration-300;
+  }
+
+  .event-card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-purple transition-all duration-300 border border-border/50 overflow-hidden cursor-pointer hover:scale-[1.02] transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
+  .hero-bg {
+    @apply bg-gradient-to-br from-purple-50 via-white to-purple-50/50;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-bounce-soft {
+    animation: bounceSoft 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
